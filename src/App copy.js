@@ -1,8 +1,13 @@
 import React, { useState, useRef, useEffect } from 'react';
 import TodoList from './TodoList';
 import { v4 as uuidv4 } from 'uuid';
+// import { useFormControl } from '@mui/material/FormControl';
 import TextField from '@mui/material/TextField';
 import Button from '@mui/material/Button';
+
+import Box from '@mui/material/Box';
+import Paper from '@mui/material/Paper';
+import Grid from '@mui/material/Grid';
 
 const LOCAL_STORAGE_KEY = 'todoApp.todos';
 
@@ -49,43 +54,46 @@ function App() {
 
   return (
     <>
-      <h1>To Do </h1>
-      <div className='taskField'>
+      <Box sx={{ flexGrow: 1 }}>
+        <Grid container spacing={2}>
+          <Grid item xs={8}>
             <TextField 
               value={todoValue}
               onChange={e => setTodoValue(e.target.value)}
               type="text"
-              // id="outlined-basic" 
-              label="Task ..." 
+              id="outlined-basic" 
+              label="Task name" 
               variant="outlined"
-              fullWidth  
-              id="fullWidth" 
+              fullWidth label="fullWidth" id="fullWidth" 
               // size="small"
             />
+          </Grid>
+          <Grid item xs={4}>
             <Button 
               onClick={handleAddTodo}
               variant="contained"
+              size="large"
             >
               Add
             </Button>
-
-      </div>
-      <div className='listInfo'>
+          </Grid>
+          <Grid item xs={8}>
             <div>{todos.filter(todo => !todo.complete).length} tasks remaining</div>
+          </Grid>
+          <Grid item xs={4}>
             <Button 
               onClick={handleClearTodos}
-              variant="outlined"
-              size="small"
-              color="secondary"
+              variant="contained"
+              size="large"
             >
               Clear completed
             </Button>
-        </div>
-        <div className='list' style={{display: todos.length===0 ? 'none' : null}} >
-              <TodoList todos={todos} toggleTodo={toggleTodo} />
-
-        </div>
-            
+          </Grid>
+          <Grid item xs={12}>
+            <TodoList todos={todos} toggleTodo={toggleTodo} />
+          </Grid>
+        </Grid>
+      </Box>
     </>
   )
 }

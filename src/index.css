@@ -1,0 +1,71 @@
+* {
+  -webkit-box-sizing: border-box;
+     -moz-box-sizing: border-box;
+          box-sizing: border-box;
+  font-family: 'Montserrat', sans-serif;
+}
+
+body {
+  display:flex;
+  justify-content: center;
+  gap: 30px;
+  background-color: rgb(255, 250, 216);
+}
+
+#root {
+  min-width: 550px;
+  border-radius: 16px;
+  padding: 12px;
+  margin-top: 24px;
+}
+
+#root,
+.MuiList-root,
+.MuiList-padding,
+ .css-mbkyfh-MuiList-root {
+  background: rgb(183, 218, 255);
+}
+
+.css-1nxmd3h-MuiListItem-root {
+  border-top: 1px solid rgb(184, 184, 184);
+}
+
+
+.css-1nxmd3h-MuiListItem-root:first-child {
+  border: none;
+}
+
+#root > * {
+  padding-bottom: 1rem;
+}
+
+h1 {
+  text-align: center;
+}
+
+.taskField {
+  display:flex;
+  justify-content: space-between;
+  gap: 10px;
+  padding: 0 16px;
+}
+
+    .MuiOutlinedInput-root {
+      background: white;
+    }
+
+.listInfo{
+  display:flex;
+  align-items: baseline;
+  justify-content: flex-end;
+  gap: 10px;
+  padding: 16px 16px 0  16px;
+}
+
+.list{
+/* border: 1px solid pink; */
+padding: 0 16px;
+
+/* margin: 20px; */
+}
+
